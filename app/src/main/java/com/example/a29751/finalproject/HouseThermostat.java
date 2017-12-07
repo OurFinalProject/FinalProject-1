@@ -6,37 +6,32 @@ package com.example.a29751.finalproject;
  */
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.util.Xml;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-
-import org.xmlpull.v1.XmlPullParser;
-import org.xmlpull.v1.XmlPullParserException;
-
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.net.HttpURLConnection;
-import java.net.URL;
+import android.widget.Toast;
+import android.support.design.widget.Snackbar;
 import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
 
@@ -55,6 +50,8 @@ public class HouseThermostat extends AppCompatActivity {
     HouseThermostatMessageFragment houseThermostatMessageFragment;
     Boolean fb1;
     private ProgressBar pBar;
+    String responseText = "You selected item 1";
+    Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -232,6 +229,10 @@ public class HouseThermostat extends AppCompatActivity {
                 eTextTemp.setText(messageAdapterHT.getItemArr(position)[3]);
            }
         });*/
+
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitleTextColor(getResources().getColor(R.color.white));
+        setSupportActionBar(toolbar);
     }
 
 
@@ -533,13 +534,13 @@ public class HouseThermostat extends AppCompatActivity {
         protected void onPostExecute(String result) {
             super.onPostExecute(result);
 
-            //pBar.setVisibility(View.INVISIBLE);
+  //          pBar.setVisibility(View.INVISIBLE);
         }
 
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-           // pBar.setVisibility(View.VISIBLE);
+            pBar.setVisibility(View.VISIBLE);
         }
     }
 
@@ -599,6 +600,116 @@ public class HouseThermostat extends AppCompatActivity {
     @Override
     protected void onDestroy(){
         super.onDestroy();
+    }
+
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.toolbar_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        switch (id) {
+            case R.id.action_one:
+                Log.d("Toolbar", "Option 1 selected");
+                Log.d("Toolbar", responseText);
+                //       if(responseText==null)    responseText = "You selected item 1";
+                View v2 = (View)findViewById(R.id.testtoolbar);
+                Snackbar.make(v2, responseText, Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+                //fab.performClick();
+                break;
+
+            case R.id.action_two:
+                Log.d("Toolbar", "Option 2 selected");
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                builder.setTitle(R.string.HTdialogTitle);
+
+
+// Add the buttons
+                builder.setPositiveButton(R.string.HTok, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        finish();
+                    }
+                });
+                builder.setNegativeButton(R.string.HTcancel, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        // User cancelled the dialog
+                    }
+                });
+
+// Create the AlertDialog
+                AlertDialog dialog = builder.create();
+                dialog.show();
+
+
+                break;
+
+            case R.id.action_three:
+                Log.d("Toolbar", "Option 3 selected");
+                LayoutInflater li= getLayoutInflater();
+                LinearLayout rootTag = (LinearLayout)li.inflate(R.layout.htcustomlayout, null);
+                final EditText et = (EditText)rootTag.findViewById(R.id.messagename);
+                //            final String sss = et.getText().toString();
+
+                AlertDialog.Builder builder2 = new AlertDialog.Builder(this);
+                builder2.setTitle(R.string.HTcustomDialogTitle);
+                LayoutInflater inflater = getLayoutInflater();
+
+                //final View v22 = (View)findViewById(R.id.testmessagename);
+                //final EditText et = (EditText)v22.findViewById(R.id.messagename);
+                //final String sss = et.getText().toString();
+
+// Add the buttons
+                builder2.setPositiveButton(R.string.HTok, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        //String sss = et.getText().toString();
+                        Log.d("Toolbar", "jump");
+
+                        responseText = et.getText().toString();
+                        Log.d("Toolbar", responseText);
+/*                     View v2 = (View)findViewById(R.id.testtoolbar);
+                        Snackbar.make(v2, responseText, Snackbar.LENGTH_LONG)
+                                .setAction("Action", null).show();
+*/
+                    }
+                });
+
+                builder2.setView(rootTag);
+
+                builder2.setNegativeButton(R.string.HTcancel, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        // User cancelled the dialog
+                    }
+                });
+
+// Create the AlertDialog
+                AlertDialog dialog2 = builder2.create();
+                dialog2.show();
+
+                break;
+            case R.id.about:
+                Toast t = Toast.makeText(this, "Version 1.0, by YanCheng", Toast.LENGTH_LONG);
+                t.show();
+                break;
+        }
+        //noinspection SimplifiableIfStatement
+    /*    if (id == R.id.action_settings) {
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);*/
+        return true;
     }
 
 }

@@ -23,4 +23,10 @@
     <string name="fd_saveText">Save Record</string>
     <string name="fd_Date">Save Date</string>
 
+    <string name="HTdialogTitle"> Do you want to go back?</string>
+    <string name="HTcustomDialogTitle"> This is a custom dialog</string>
+    <string name="HTcustomLayout">New Message</string>
+    <string name="HTok"> ok</string>
+    <string name="HTcancel">cancel </string>
+
 </resources>

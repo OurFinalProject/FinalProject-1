@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <item
+            android:id="@+id/action_one"
+            android:icon="@drawable/icons8_money_bag_50"
+            android:orderInCategory="101"
+            android:title="Choice 1"
+            app:showAsAction="always" />
+
+        <item
+            android:id="@+id/action_two"
+            android:icon="@drawable/icons8_music_50"
+            android:orderInCategory="201"
+            android:title="Choice 2"
+            app:showAsAction="always" />
+
+        <item
+            android:id="@+id/action_three"
+            android:icon="@drawable/icons8_home_50"
+            android:orderInCategory="301"
+            android:title="Choice 3"
+            app:showAsAction="always" />
+
+
+        <item android:id="@+id/action_settings"
+            android:title="settings"
+            android:orderInCategory="401"
+            app:showAsAction="never" />
+
+        <item
+            android:id="@+id/about"
+
+            android:orderInCategory="501"
+            android:title="About"
+            app:showAsAction="never" />
+    </menu>
