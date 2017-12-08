@@ -6,88 +6,77 @@
     android:layout_height="match_parent"
     >
 
+    <include
+
+        layout="@layout/activity_test_toolbar" />
+
     <ListView
         android:id="@+id/listView_HouseThermostat"
         android:layout_width="300dp"
         android:layout_height="match_parent"
         android:layout_above="@+id/textView_HouseThermostat"
-        android:layout_alignParentTop="true" />
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="57dp" />
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_above="@+id/textView_HouseThermostat"
+        android:visibility="invisible" />
 
     <LinearLayout
+        android:orientation="horizontal"
         android:id="@+id/textView_HouseThermostat"
         android:layout_width="300dp"
         android:layout_height="50dp"
-        android:layout_above="@+id/button_HouseThermostat"
-        android:layout_alignParentLeft="true"
         android:layout_centerHorizontal="true"
-        android:orientation="horizontal">
-
-        <EditText
-            android:id="@+id/edittext_Week_HouseThermostat"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="3"
-            android:inputType="text" />
-
-        <EditText
-            android:id="@+id/edittext_Time_HouseThermostat"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="2"
-            android:inputType="time" />
-
-        <EditText
-            android:id="@+id/edittext_TempWord_HouseThermostat"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="2"
-            android:text=" Temp -> " />
-
-        <EditText
-            android:id="@+id/edittext_Temp_HouseThermostat"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:inputType="number" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/button_HouseThermostat"
-        android:layout_width="300dp"
-        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_centerHorizontal="true"
-        android:gravity="bottom|center_vertical"
-        android:orientation="horizontal">
+        android:gravity="center_vertical|bottom"
+        >
 
-        <Button
-            android:id="@+id/addButton_HouseThermostat"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/add_HouseThermostat" />
+        <EditText
+        android:id="@+id/edittext_Week_HouseThermostat"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="3"
+        android:inputType="text"
+        />
 
-        <Button
-            android:id="@+id/editButton_HouseThermostat"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/edit_HouseThermostat" />
+    <EditText
+        android:id="@+id/edittext_Time_HouseThermostat"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        android:inputType="time"
+        />
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text="@string/HTTemp"
+        android:layout_weight="1"
+        android:id="@+id/edittext_TempWord_HouseThermostat" />
 
-        <Button
-            android:id="@+id/saveButton_HouseThermostat"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/save_HouseThermostat" />
+    <EditText
+        android:id="@+id/edittext_Temp_HouseThermostat"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:inputType="number"
+        />
 
-        <Button
-            android:id="@+id/deleteButton_HouseThermostat"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/delete_HouseThermostat" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/add_HouseThermostat"
+        android:id="@+id/addButton_HouseThermostat"
+        android:layout_weight="1" />
+
+
+
     </LinearLayout>
 
     <FrameLayout

@@ -4,14 +4,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/test_house_thermostat"
     >
+
+
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        android:elevation="4dp"
+        android:textColor="@color/white"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
     <ListView
         android:id="@+id/listView_HouseThermostat"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_above="@+id/textView_HouseThermostat"
-        android:layout_alignParentTop="true" />
+        android:layout_alignParentTop="true"
+        android:paddingTop="57dp" />
 
     <ProgressBar
         android:id="@+id/progress_bar"
@@ -51,7 +65,7 @@
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text=" Temp -> "
+            android:text="@string/HTTemp"
             android:layout_weight="1"
             android:id="@+id/edittext_TempWord_HouseThermostat" />
         <EditText

@@ -26,7 +26,8 @@
             android:label="Food Nutrition Tracker" />
         <activity
             android:name=".HouseThermostat"
-            android:label="House Thermostat" />
+            android:label="@string/HouseThermostat"
+            />
         <activity
             android:name=".Automobile"
             android:label="AutoMobile" />

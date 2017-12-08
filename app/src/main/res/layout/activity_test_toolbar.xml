@@ -6,17 +6,16 @@
     android:layout_height="match_parent"
     android:id="@+id/testtoolbar"
     android:orientation="vertical"
-    tools:context="com.example.a29751.finalproject.HouseThermostatMessageDetails">
-
+    tools:context="com.example.a29751.finalproject.HouseThermostat">
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="@color/colorPrimary"
-            android:textColor="@color/white"
             android:elevation="4dp"
+            android:textColor="@color/white"
             android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
 </LinearLayout>

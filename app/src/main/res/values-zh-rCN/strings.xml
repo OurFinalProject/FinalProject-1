@@ -14,4 +14,24 @@
     <string name="fd_saveText">保存记录</string>
     <string name="fd_Date">保存时间</string>
 
+    <string name="add_HouseThermostat">添加</string>
+    <string name="edit_HouseThermostat">编辑 &amp; 保存</string>
+    <string name="delete_HouseThermostat">删除</string>
+    <string name="save_HouseThermostat">保存为新纪录</string>
+
+    <string name="hello_blank_fragment">你好，空白片段</string>
+
+    <string name="HTdialogTitle">是否返回？</string>
+    <string name="HTcustomDialogTitle">这是自定义窗口</string>
+    <string name="HTcustomLayout">新信息</string>
+    <string name="HTok">是</string>
+    <string name="HTcancel">取消</string>
+    <string name="HThelpItem">"版本1.0, 作者程艳, "
+        + "本界面可用于添加，编辑并保存，编辑并存为新纪录，以及删除所列事项"</string>
+    <string name="HTsettings">设置</string>
+    <string name="HThelp">帮助</string>
+    <string name="HTTemp">温度</string>
+    <string name="HTselectItem">你选择了事项1</string>
+    <string name="HouseThermostat">居家</string>
+
 </resources>

@@ -12,6 +12,8 @@ import android.content.res.Configuration;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.AsyncTask;
+import android.support.v4.view.MenuItemCompat;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -50,13 +52,36 @@ public class HouseThermostat extends AppCompatActivity {
     HouseThermostatMessageFragment houseThermostatMessageFragment;
     Boolean fb1;
     private ProgressBar pBar;
-    String responseText = "You selected item 1";
-    Toolbar toolbar;
+    String responseText;
+    //Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_house_thermostat);
+        responseText = getString(R.string.HTselectItem);
+        Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar);
+        toolbar.setTitleTextColor(getResources().getColor(R.color.white));
+        setSupportActionBar(toolbar);
+
+        /*
+        toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                Log.d("Toolbar", "Optivvvvvvon3 selected");
+                switch (item.getItemId()){
+                    case R.id.action_one :
+                        Log.d("Toolbar", "111111 selected"); break;
+                    case R.id.action_two:
+                        Log.d("Toolbar", "2222 selected"); break;
+                        default:break;
+                }
+                return true;
+            }
+        });
+        */
+        //getSupportActionBar().setDisplayShowTitleEnabled(false);
+
         Log.i(ACTIVITY_NAME, "In onCreate()");
         listView = (ListView)findViewById(R.id.listView_HouseThermostat);
         eTextWeek   = (EditText) findViewById(R.id.edittext_Week_HouseThermostat);
@@ -230,9 +255,36 @@ public class HouseThermostat extends AppCompatActivity {
            }
         });*/
 
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setTitleTextColor(getResources().getColor(R.color.white));
-        setSupportActionBar(toolbar);
+
+
+
+        //toolbar.setNavigationIcon(R.drawable.ic_toolbar_arrow);
+
+
+        /*
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        toolbar.setNavigationOnClickListener(
+
+        new View.OnClickListener() {
+
+            @Override
+
+            public void onClick(View v) {
+                Log.d("Toolbar", "cgh 2 selected");
+
+                Toast.makeText(getApplicationContext(),"Hello Javatpoint",Toast.LENGTH_SHORT).show();
+
+
+            }
+
+        }
+
+
+
+        );
+        */
     }
 
 
@@ -308,7 +360,8 @@ public class HouseThermostat extends AppCompatActivity {
 
     public void deleteTabletMsg(int id) {
         deleteMsg(id);
-        messageAdapterHT.notifyDataSetChanged();
+        updateListView();
+        //messageAdapterHT.notifyDataSetChanged();
 
         //           listView.invalidate();//Invalidate the whole view. If the view is visible, onDraw(android.graphics.Canvas) will be called at some point in the future.
 //            listView.refreshDrawableState();//all this to force a view to update its drawable state. This will cause drawableStateChanged to be called on this view. Views that are interested in the new state should call getDrawableState.
@@ -389,7 +442,7 @@ public class HouseThermostat extends AppCompatActivity {
                     int progress =1;
                     while(progress<=30) {
                         pBar.setProgress(progress);
-                        sleep(1000);
+                        sleep(300);
                         ++progress;
                     }
                 }
@@ -400,11 +453,12 @@ public class HouseThermostat extends AppCompatActivity {
 
         pBarThread.start();
 
-
+        //pBar.setVisibility(View.INVISIBLE);
     }
 
     public void saveNewTabletMsg(int id, String weekS, String timeS, String tempS) {
         saveNewMsg(id, weekS, timeS, tempS);
+        updateListView();
  //       messageAdapterHT.notifyDataSetChanged();
 
         //           listView.invalidate();//Invalidate the whole view. If the view is visible, onDraw(android.graphics.Canvas) will be called at some point in the future.
@@ -458,6 +512,7 @@ public class HouseThermostat extends AppCompatActivity {
 
     public void updateTabletMsg(int id, String weekS, String timeS, String tempS) {
         updateMsg(id, weekS, timeS, tempS);
+        updateListView();
 //        messageAdapterHT.notifyDataSetChanged();
 
         //           listView.invalidate();//Invalidate the whole view. If the view is visible, onDraw(android.graphics.Canvas) will be called at some point in the future.
@@ -476,16 +531,16 @@ public class HouseThermostat extends AppCompatActivity {
             String test = urls[0];
             switch (urls[0]){
                 case "1" :   deleteMsg(Integer.valueOf(urls[1]));
-                    result = test;
+                             result = test;
                              //messageAdapterHT.notifyDataSetChanged();
                              break;
                 case "2":    //new HTQuery().execute(btnType, weekS, timeS, tempS);
-                             saveNewTabletMsg(Integer.valueOf(urls[1]), urls[2],urls[3],urls[4]);
-                    result = test;
+                             saveNewMsg(Integer.valueOf(urls[1]), urls[2],urls[3],urls[4]);
+                             result = test;
                              //messageAdapterHT.notifyDataSetChanged();
                              break;
-                case "3" :   updateTabletMsg(Integer.valueOf(urls[1]),  urls[2],urls[3],urls[4]);
-                    result = test;
+                case "3" :   updateMsg(Integer.valueOf(urls[1]),  urls[2],urls[3],urls[4]);
+                             result = test;
                              //messageAdapterHT.notifyDataSetChanged();
                              break;
                 default:   break;
@@ -527,6 +582,7 @@ public class HouseThermostat extends AppCompatActivity {
         @Override
         protected void onProgressUpdate(Integer... value) {
             pBar.setVisibility(View.VISIBLE);
+
             //pBar.setProgress(value[0]);
         }
 
@@ -607,7 +663,30 @@ public class HouseThermostat extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
+        Log.d("Toolbar", "Optivvvvvvon 2 selected");
+        //super.onCreateOptionsMenu(menu);
         getMenuInflater().inflate(R.menu.toolbar_menu, menu);
+
+        /*
+        for (int i = 0; i < menu.size(); i++) {
+            MenuItem item = menu.getItem(i);
+            if (item.getItemId() == R.id.menu_more) {
+                View vm = item.getActionView();
+                if (vm != null) {
+                    Log.d("Toolbar", "Optivvvvvvon3 555selected");
+                    vm.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View vm) {
+                            int iii = 0;
+                            Log.d("Toolbar", "Optivvvvvvon3 555selected");
+                        }
+                    });
+                }
+            }
+
+
+        }
+        */
         return true;
     }
 
@@ -617,19 +696,19 @@ public class HouseThermostat extends AppCompatActivity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
+        Log.d("Toolbar", "Optivvvvvvon3 selected");
         switch (id) {
-            case R.id.action_one:
+            case R.id.HTaction_one:
                 Log.d("Toolbar", "Option 1 selected");
                 Log.d("Toolbar", responseText);
                 //       if(responseText==null)    responseText = "You selected item 1";
-                View v2 = (View)findViewById(R.id.testtoolbar);
+                View v2 = (View)findViewById(R.id.test_house_thermostat);
                 Snackbar.make(v2, responseText, Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
                 //fab.performClick();
                 break;
 
-            case R.id.action_two:
+            case R.id.HTaction_two:
                 Log.d("Toolbar", "Option 2 selected");
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -655,7 +734,7 @@ public class HouseThermostat extends AppCompatActivity {
 
                 break;
 
-            case R.id.action_three:
+            case R.id.HTaction_three:
                 Log.d("Toolbar", "Option 3 selected");
                 LayoutInflater li= getLayoutInflater();
                 LinearLayout rootTag = (LinearLayout)li.inflate(R.layout.htcustomlayout, null);
@@ -698,8 +777,8 @@ public class HouseThermostat extends AppCompatActivity {
                 dialog2.show();
 
                 break;
-            case R.id.about:
-                Toast t = Toast.makeText(this, "Version 1.0, by YanCheng", Toast.LENGTH_LONG);
+            case R.id.HTHelp:
+                Toast t = Toast.makeText(this, R.string.HThelpItem, Toast.LENGTH_LONG);
                 t.show();
                 break;
         }
