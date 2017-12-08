@@ -600,12 +600,6 @@ public class HouseThermostat extends AppCompatActivity {
         }
     }
 
-
-
-
-
-
-
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == 10&& data != null && data.getExtras() != null) {   //Come back from Cell Phone delete
 
