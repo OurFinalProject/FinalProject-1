@@ -73,9 +73,34 @@
     <ListView
         android:id="@+id/listView"
         android:layout_height="wrap_content"
-        android:layout_width="match_parent"
+        android:layout_width="200dp"
         app:layout_constraintTop_toBottomOf="@+id/saveButton">
     </ListView>
 
+    <FrameLayout
+        android:id="@+id/detailFrameLayout"
+        android:layout_width="150dp"
+        android:layout_height="250dp"
+        app:layout_constraintTop_toBottomOf="@+id/saveButton"
+        app:layout_constraintLeft_toRightOf="@+id/listView"
+        />
+
+    <TextView
+        android:id="@+id/totalTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/detailFrameLayout"
+        app:layout_constraintLeft_toRightOf="@+id/listView"/>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="150dp"
+        android:layout_height="15dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="15dp"
+        android:visibility="invisible"
+        app:layout_constraintTop_toBottomOf="@+id/totalTime"
+        app:layout_constraintLeft_toRightOf="@+id/listView"/>
 
 </android.support.constraint.ConstraintLayout>

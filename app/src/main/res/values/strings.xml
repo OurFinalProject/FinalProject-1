@@ -40,5 +40,8 @@
         + "Instruction for use: the interface can be user to add, edit &amp; save, edit &amp; new, and delete items."</string>
     <string name="open_string">Open</string>
     <string name="close_string">Close</string>
+    <string name="HTdeleteTitle">Do you want to delete?</string>
+    <string name="HTSaveAsNew">The item will be saved as a new item.</string>
+    <string name="HTEditAndSave">The item will be edited and then saved.</string>
 
 </resources>

@@ -39,5 +39,8 @@
         + "使用说明：本界面可用于添加，编辑并保存，编辑并存为新纪录，以及删除所列事项."</string>
     <string name="open_string">开放</string>
     <string name="close_string">关闭</string>
+    <string name="HTdeleteTitle">确认删除吗？</string>
+    <string name="HTSaveAsNew">事项将被保存为新纪录</string>
+    <string name="HTEditAndSave">事项将被更新</string>
 
 </resources>

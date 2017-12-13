@@ -12,7 +12,7 @@ import android.util.Log;
 public class activityTrackingDatabaseHelper extends SQLiteOpenHelper {
 
     static String DATABASE_NAME="FinalProject.db";
-    static int VERSION_NUM=1;
+    static int VERSION_NUM=2;
     public final static String TABLE_NAME="activity";
     public final static String KEY_ID="_id";
     public final static String KEY_TYPE="TYPE";
