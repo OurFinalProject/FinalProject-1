@@ -34,5 +34,11 @@
     <string name="HTTemp"> Temp -> </string>
     <string name="HTselectItem">You selected item 1</string>
     <string name="HouseThermostat">House Thermostat</string>
+    <string name="HTinstruction">Instruction</string>
+    <string name="HTheader_text">Navigation Header</string>
+    <string name="HTinstructionItem">"Author: YanCheng, Version: 1.0, "
+        + "Instruction for use: the interface can be user to add, edit &amp; save, edit &amp; new, and delete items."</string>
+    <string name="open_string">Open</string>
+    <string name="close_string">Close</string>
 
 </resources>

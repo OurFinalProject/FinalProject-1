@@ -10,6 +10,7 @@
 
         layout="@layout/activity_test_toolbar" />
 
+
     <ListView
         android:id="@+id/listView_HouseThermostat"
         android:layout_width="300dp"

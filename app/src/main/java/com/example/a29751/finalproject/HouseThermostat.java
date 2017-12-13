@@ -4,6 +4,8 @@ package com.example.a29751.finalproject;
  * Finished by Cheng Yan
  * This is about House Thermostat
  */
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -12,8 +14,13 @@ import android.content.res.Configuration;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.AsyncTask;
+import android.support.design.widget.NavigationView;
+import android.support.v4.app.NotificationCompat;
 import android.support.v4.view.MenuItemCompat;
+
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -21,6 +28,7 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
@@ -37,7 +45,8 @@ import android.support.design.widget.Snackbar;
 import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
 
-public class HouseThermostat extends AppCompatActivity {
+public class HouseThermostat extends AppCompatActivity
+        implements NavigationView.OnNavigationItemSelectedListener{
 
     private ListView listView;
     private EditText eTextWeek, eTextTime, eTextTemp;
@@ -53,6 +62,7 @@ public class HouseThermostat extends AppCompatActivity {
     Boolean fb1;
     private ProgressBar pBar;
     String responseText;
+    DrawerLayout drawer;
     //Toolbar toolbar;
 
     @Override
@@ -63,6 +73,14 @@ public class HouseThermostat extends AppCompatActivity {
         Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar);
         toolbar.setTitleTextColor(getResources().getColor(R.color.white));
         setSupportActionBar(toolbar);
+
+        drawer = (DrawerLayout)findViewById(R.id.drawer_layout);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.open_string, R.string.close_string);
+        drawer.setDrawerListener(toggle);
+        toggle.syncState();
+
+        NavigationView navView = (NavigationView)findViewById(R.id.nav_view);
+        navView.setNavigationItemSelectedListener(this);
 
         /*
         toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
@@ -652,8 +670,6 @@ public class HouseThermostat extends AppCompatActivity {
         super.onDestroy();
     }
 
-
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -782,6 +798,25 @@ public class HouseThermostat extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);*/
+        return true;
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(MenuItem item)
+    {
+        switch (item.getItemId()) {
+            case R.id.nav_item_one:
+                Toast t1 = Toast.makeText(this, R.string.HTinstructionItem, Toast.LENGTH_LONG);
+                t1.show();
+                break;
+            case R.id.nav_item_two:
+                break;
+            case R.id.nav_item_three:
+                break;
+            case R.id.nav_item_four:
+                break;
+        }
+        drawer.closeDrawers();
         return true;
     }
 

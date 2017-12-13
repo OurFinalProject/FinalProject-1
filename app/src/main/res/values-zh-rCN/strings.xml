@@ -33,5 +33,11 @@
     <string name="HTTemp">温度</string>
     <string name="HTselectItem">你选择了事项1</string>
     <string name="HouseThermostat">居家</string>
+    <string name="HTinstruction">信息</string>
+    <string name="HTheader_text">导航表头</string>
+    <string name="HTinstructionItem">"作者：程艳，版本号：1.0, "
+        + "使用说明：本界面可用于添加，编辑并保存，编辑并存为新纪录，以及删除所列事项."</string>
+    <string name="open_string">开放</string>
+    <string name="close_string">关闭</string>
 
 </resources>
