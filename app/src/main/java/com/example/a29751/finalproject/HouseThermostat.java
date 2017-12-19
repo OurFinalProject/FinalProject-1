@@ -83,7 +83,6 @@ public class HouseThermostat extends AppCompatActivity
         NavigationView navView = (NavigationView)findViewById(R.id.nav_view);
         navView.setNavigationItemSelectedListener(this);
 
-
         Log.i(ACTIVITY_NAME, "In onCreate()");
         listView = (ListView)findViewById(R.id.listView_HouseThermostat);
         eTextWeek   = (EditText) findViewById(R.id.edittext_Week_HouseThermostat);
