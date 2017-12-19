@@ -73,7 +73,7 @@ public class HouseThermostat extends AppCompatActivity
         responseText = getString(R.string.HTselectItem);
         Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar);
         toolbar.setTitleTextColor(getResources().getColor(R.color.white));
-        //setSupportActionBar(toolbar);
+        setSupportActionBar(toolbar);
 
         drawer = (DrawerLayout)findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.open_string, R.string.close_string);
@@ -175,14 +175,17 @@ public class HouseThermostat extends AppCompatActivity
                 String newStringTime = eTextTime.getText().toString();
                 String newStringTemp = eTextTemp.getText().toString();
                 if (newStringWeek.equals(""))
-                    addText += "Week can not be null! ";
-                if (newStringTime.equals(""))
-                    addText += "Time can not be null! ";
+      //              addText += "Week can not be null! ";
+                    addText += getString(R.string.HTWeekNull);
+                    if (newStringTime.equals(""))
+                    addText += getString(R.string.HTTimeNull);
                 if (newStringTemp.equals(""))
-                    addText += "Temp can not be null! ";
+                    addText += getString(R.string.HTTempNull);
                 if (addText.equals(""))
                 {
-                    addText = "Added successful!";
+//                    addText = "Added successful!";
+                    //addText = "";
+                    addText = getString(R.string.HTAddSucc);
                 String[] newStringArr = new String[]{newStringWeek, newStringTime, " Temp -> ", newStringTemp};
                 chatMessageArr.add(newStringArr);
                 chatMessage.add(newStringWeek + newStringTime + " Temp -> " + newStringTemp);

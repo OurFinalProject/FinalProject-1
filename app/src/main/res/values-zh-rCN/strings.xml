@@ -42,5 +42,9 @@
     <string name="HTdeleteTitle">确认删除吗？</string>
     <string name="HTSaveAsNew">事项将被保存为新纪录</string>
     <string name="HTEditAndSave">事项将被更新</string>
+    <string name= "HTWeekNull"> 星期不能为空!</string>
+    <string name= "HTTimeNull"> 时间不能为空!</string>
+    <string name= "HTTempNull"> 温度不能为空!</string>
+    <string name= "HTAddSucc"> 添加成功!</string>
 
 </resources>

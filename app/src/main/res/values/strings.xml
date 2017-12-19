@@ -44,4 +44,10 @@
     <string name="HTSaveAsNew">The item will be saved as a new item.</string>
     <string name="HTEditAndSave">The item will be edited and then saved.</string>
 
+    <string name= "HTWeekNull"> Week can not be null!</string>
+    <string name= "HTTimeNull"> Time can not be null!</string>
+    <string name= "HTTempNull"> Temp can not be null!</string>
+    <string name= "HTAddSucc">  Added successful!</string>
+
+
 </resources>

@@ -7,88 +7,114 @@
     android:id="@+id/land_test_house_thermostat"
     >
 
-    <include
-
-        layout="@layout/activity_test_toolbar" />
-
-
-    <ListView
-        android:id="@+id/listView_HouseThermostat"
-        android:layout_width="300dp"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/textView_HouseThermostat"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="57dp" />
-
-    <ProgressBar
-        android:id="@+id/progress_bar"
-
-        style="@android:style/Widget.ProgressBar.Horizontal"
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_above="@+id/textView_HouseThermostat"
-        android:visibility="invisible" />
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        android:elevation="4dp"
+        android:textColor="@color/white"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        android:visibility="visible"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
-    <LinearLayout
-        android:orientation="horizontal"
-        android:id="@+id/textView_HouseThermostat"
-        android:layout_width="300dp"
-        android:layout_height="50dp"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentBottom="true"
-        android:gravity="center_vertical|bottom"
-        >
-
-        <EditText
-        android:id="@+id/edittext_Week_HouseThermostat"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_weight="3"
-        android:inputType="text"
-        />
-
-    <EditText
-        android:id="@+id/edittext_Time_HouseThermostat"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_weight="2"
-        android:inputType="time"
-        />
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:text="@string/HTTemp"
-        android:layout_weight="1"
-        android:id="@+id/edittext_TempWord_HouseThermostat" />
-
-    <EditText
-        android:id="@+id/edittext_Temp_HouseThermostat"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:inputType="number"
-        />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/add_HouseThermostat"
-        android:id="@+id/addButton_HouseThermostat"
-        android:layout_weight="1" />
-
-
-
-    </LinearLayout>
-
-    <FrameLayout
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_toRightOf="@+id/listView_HouseThermostat"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
 
-        android:layout_alignParentTop="true"
-        android:id="@+id/frameLayout_houseThermostat"
-        />
+            <ListView
+                android:id="@+id/listView_HouseThermostat"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+
+            <ProgressBar
+                android:id="@+id/progress_bar"
+
+                style="@android:style/Widget.ProgressBar.Horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_above="@+id/textView_HouseThermostat"
+                android:visibility="invisible" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:id="@+id/textView_HouseThermostat"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_centerHorizontal="true"
+
+                android:layout_alignParentBottom="true"
+                android:gravity="center_vertical|bottom"
+
+                >
+
+                <EditText
+                    android:id="@+id/edittext_Week_HouseThermostat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:inputType="text"
+                    />
+                <EditText
+                    android:id="@+id/edittext_Time_HouseThermostat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:inputType="time"
+                    />
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="@string/HTTemp"
+                    android:layout_weight="1"
+                    android:id="@+id/edittext_TempWord_HouseThermostat" />
+                <EditText
+                    android:id="@+id/edittext_Temp_HouseThermostat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:inputType="number"
+                    />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/add_HouseThermostat"
+                    android:id="@+id/addButton_HouseThermostat"
+                    android:layout_weight="1" />
+
+            </LinearLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_toRightOf="@+id/listView_HouseThermostat"
+
+
+                android:layout_alignParentTop="true"
+                android:id="@+id/frameLayout_houseThermostat"
+                />
+
+        </RelativeLayout>
+
+        <android.support.design.widget.NavigationView
+            android:id="@+id/nav_view"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            app:headerLayout="@layout/ht_navigation_header"
+            app:menu="@menu/ht_navigation_menu" />
+
+    </android.support.v4.widget.DrawerLayout>
+
+
+
 
 </RelativeLayout>
