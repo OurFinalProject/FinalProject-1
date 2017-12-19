@@ -1,0 +1,62 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.a29751.finalproject.HouseThermostatMessageFragment">
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView_IDHT"
+        android:gravity="right"
+        android:layout_marginTop="30dp"
+        />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView_WeekHT"
+        android:gravity="right"
+        android:layout_marginTop="60dp"
+         />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+         android:id="@+id/textView_TiemHT"
+        android:gravity="right"
+        android:layout_marginTop="90dp"
+        />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView_TempHT"
+        android:gravity="right"
+        android:layout_marginTop="120dp"
+        />
+
+    <Button
+        android:id="@+id/editButton_HT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left|bottom"
+        android:text="@string/edit_HouseThermostat"
+        android:textSize="12sp" />
+
+    <Button
+        android:id="@+id/saveButton_HT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|bottom"
+        android:text="@string/save_HouseThermostat"
+        android:textSize="12sp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/delete_HouseThermostat"
+        android:id="@+id/deleteButton_HT"
+        android:layout_gravity="right|bottom" />
+
+</FrameLayout>

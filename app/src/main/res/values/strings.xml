@@ -1,0 +1,47 @@
+<resources>
+
+    <string name="app_name">FinalProject</string>
+
+    <string name="add_HouseThermostat">add</string>
+    <string name="edit_HouseThermostat">edit &amp; save</string>
+    <string name="delete_HouseThermostat">delete</string>
+    <string name="save_HouseThermostat">save as new</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+   
+    <string name="sportMenu">Sport</string>
+    <string name="foodMenu">Nutrition</string>
+    <string name="houseMenu">Home</string>
+    <string name="carMenu">Car</string>
+
+    <!--Food Nutrition!-->
+    <string name="foodName">Food Name</string>
+    <string name="fd_calsName">Calories</string>
+    <string name="fd_fatName">Fat</string>
+    <string name="fd_CarboName">Carbohydrate</string>
+    <string name="fd_saveText">Save Record</string>
+    <string name="fd_Date">Save Date</string>
+
+    <string name="HTdialogTitle"> Do you want to go back?</string>
+    <string name="HTcustomDialogTitle"> This is a custom dialog</string>
+    <string name="HTcustomLayout">New Message</string>
+    <string name="HTok"> ok</string>
+    <string name="HTcancel">cancel </string>
+    <string name="HThelpItem">"By YanCheng, version 1.0, "
+        + "the interface can be user to add, edit &amp; save, edit &amp; new, and delete items"</string>
+    <string name="HTsettings">Settings</string>
+    <string name="HThelp">Help</string>
+    <string name="HTTemp"> Temp -> </string>
+    <string name="HTselectItem">You selected item 1</string>
+    <string name="HouseThermostat">House Thermostat</string>
+    <string name="HTinstruction">Instruction</string>
+    <string name="HTheader_text">Navigation Header</string>
+    <string name="HTinstructionItem">"Author: YanCheng, Version: 1.0, "
+        + "Instruction for use: the interface can be user to add, edit &amp; save, edit &amp; new, and delete items."</string>
+    <string name="open_string">Open</string>
+    <string name="close_string">Close</string>
+    <string name="HTdeleteTitle">Do you want to delete?</string>
+    <string name="HTSaveAsNew">The item will be saved as a new item.</string>
+    <string name="HTEditAndSave">The item will be edited and then saved.</string>
+
+</resources>

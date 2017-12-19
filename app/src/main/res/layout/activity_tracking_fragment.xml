@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="10dp" >
+
+    <TextView
+        android:id="@+id/fragmentType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="20dp"
+        android:hint="Type" />
+
+    <TextView
+        android:id="@+id/fragmentMin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="19dp"
+        android:hint="Minutes"
+        app:layout_constraintTop_toBottomOf="@+id/fragmentType" />
+
+    <TextView
+        android:id="@+id/fragmentComm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="20dp"
+        android:hint="Comments"
+        app:layout_constraintTop_toBottomOf="@+id/fragmentMin"/>
+
+    <TextView
+        android:id="@+id/fragmentTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="19dp"
+        android:hint="Enter time"
+        app:layout_constraintTop_toBottomOf="@+id/fragmentComm" />
+
+    <Button
+        android:id="@+id/deleteButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:text="delete"
+        app:layout_constraintTop_toBottomOf="@+id/fragmentTime"/>
+
+</android.support.constraint.ConstraintLayout>

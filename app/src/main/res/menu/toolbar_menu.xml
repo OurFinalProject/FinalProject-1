@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.a29751.finalproject.HouseThermostat"
+    android:id="@+id/menu_more"
+    >
+
+        <item
+            android:id="@+id/HTaction_one"
+            android:icon="@drawable/icons8_money_bag_50"
+            android:orderInCategory="101"
+            android:title="Choice 1"
+            app:showAsAction="always" />
+
+        <item
+            android:id="@+id/HTaction_two"
+            android:icon="@drawable/icons8_music_50"
+            android:orderInCategory="201"
+            android:title="Choice 2"
+            app:showAsAction="always" />
+
+        <item
+            android:id="@+id/HTaction_three"
+            android:icon="@drawable/icons8_home_50"
+            android:orderInCategory="301"
+            android:title="Choice 3"
+            app:showAsAction="always" />
+
+
+        <item android:id="@+id/HTaction_settings"
+            android:title="@string/HTsettings"
+            android:orderInCategory="401"
+            app:showAsAction="never" />
+
+        <item
+            android:id="@+id/HTHelp"
+
+            android:orderInCategory="501"
+            android:title="@string/HThelp"
+            app:showAsAction="never" />
+    </menu>
