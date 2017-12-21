@@ -60,28 +60,31 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="3"
-            android:inputType="text"
-            />
+            android:hint="Week"
+            android:inputType="text" />
+
         <EditText
             android:id="@+id/edittext_Time_HouseThermostat"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="2"
-            android:inputType="time"
-            />
-        <EditText
+            android:hint="Time"
+            android:inputType="time" />
+
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="@string/HTTemp"
             android:layout_weight="1"
             android:id="@+id/edittext_TempWord_HouseThermostat" />
+
         <EditText
             android:id="@+id/edittext_Temp_HouseThermostat"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:inputType="number"
-            />
+            android:hint="Temp"
+            android:inputType="number" />
 
         <Button
             android:layout_width="wrap_content"

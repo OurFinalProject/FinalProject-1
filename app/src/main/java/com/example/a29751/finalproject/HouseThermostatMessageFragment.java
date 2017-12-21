@@ -1,20 +1,18 @@
 package com.example.a29751.finalproject;
 
-
 import android.app.Fragment;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-
 import android.support.v7.app.AlertDialog;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
+import android.widget.LinearLayout;
 import android.widget.Toast;
-
 
 /**
  * A simple {@link Fragment} subclass.
@@ -24,6 +22,7 @@ public class HouseThermostatMessageFragment extends Fragment {
     EditText myText1,myText2, myText3, myText4;
     Button btDelete, btSave, btUpdate;
     String messageId, weekS, timeS, tempS;
+    String editTextTemp;
  //   Boolean delConf = false;
 
     public HouseThermostatMessageFragment() {
@@ -128,6 +127,33 @@ public class HouseThermostatMessageFragment extends Fragment {
                 weekS = myText2.getText().toString();
                 timeS = myText3.getText().toString();
                 tempS = myText4.getText().toString();
+
+//parent.showCustomDialog();
+    /*            LayoutInflater li= getActivity().getLayoutInflater();
+                LayoutInflater li = LayoutInflater.from(getActivity());
+               View.inflate();
+                LinearLayout rootTag = (LinearLayout)li.inflate(R.layout.htcustomlayout, null);
+                final EditText et = (EditText)rootTag.findViewById(R.id.messagename);
+                AlertDialog.Builder builder2 = new AlertDialog.Builder(getActivity());
+                builder2.setTitle(R.string.HTcustomDialogTitle);
+
+                builder2.setPositiveButton(R.string.HTok, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        Log.d("Toolbar", "jump");
+                        editTextTemp = et.getText().toString();
+                        Log.d("Toolbar", editTextTemp);
+                    }
+                });
+                builder2.setView(rootTag);
+                builder2.setNegativeButton(R.string.HTcancel, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {   }          });
+                AlertDialog dialog2 = builder2.create();
+                dialog2.show();
+                tempS = editTextTemp;*/
+
+
+
+
                 if(houseThermostat==null) {//on phone
                     // Code here executes on main thread after user presses button
                     Intent intent = new Intent(getActivity(), HouseThermostat.class);

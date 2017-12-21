@@ -4,8 +4,6 @@ package com.example.a29751.finalproject;
  * Finished by Cheng Yan
  * This is about House Thermostat
  */
-import android.app.NotificationManager;
-import android.app.PendingIntent;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -15,11 +13,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.AsyncTask;
 import android.support.design.widget.NavigationView;
-import android.support.v4.app.NotificationCompat;
-import android.support.v4.view.MenuItemCompat;
-
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -28,7 +22,6 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
@@ -43,7 +36,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.support.design.widget.Snackbar;
 import java.util.ArrayList;
-import java.util.concurrent.ExecutionException;
 
 public class HouseThermostat extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener{
@@ -70,7 +62,8 @@ public class HouseThermostat extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_house_thermostat);
-        responseText = getString(R.string.HTselectItem);
+       // responseText = getString(R.string.HTselectItem);
+        responseText = "1.0";
         Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar);
         toolbar.setTitleTextColor(getResources().getColor(R.color.white));
         setSupportActionBar(toolbar);
@@ -591,7 +584,9 @@ public class HouseThermostat extends AppCompatActivity
     {
         switch (item.getItemId()) {
             case R.id.nav_item_one:
-                Toast t1 = Toast.makeText(this, R.string.HTinstructionItem, Toast.LENGTH_LONG);
+                String s2 = getString(R.string.HTinstructionItem1) + responseText + getString(R.string.HTinstructionItem2);
+                Toast t1 = Toast.makeText(this, s2, Toast.LENGTH_LONG);
+//                Toast t1 = Toast.makeText(this, R.string.HTinstructionItem1 + responseText +R.string.HTinstructionItem1, Toast.LENGTH_LONG);
                 t1.show();
                 break;
             case R.id.nav_item_two:

@@ -23,7 +23,7 @@
     <string name="fd_Date">Save Date</string>
 
     <string name="HTdialogTitle"> Do you want to go back?</string>
-    <string name="HTcustomDialogTitle"> This is a custom dialog</string>
+    <string name="HTcustomDialogTitle"> This is a custom dialog. What version is this? </string>
     <string name="HTcustomLayout">New Message</string>
     <string name="HTok"> ok</string>
     <string name="HTcancel">cancel </string>
@@ -36,8 +36,10 @@
     <string name="HouseThermostat">House Thermostat</string>
     <string name="HTinstruction">Instruction</string>
     <string name="HTheader_text">Navigation Header</string>
-    <string name="HTinstructionItem">"Author: YanCheng, Version: 1.0, "
-        + "Instruction for use: the interface can be user to add, edit &amp; save, edit &amp; new, and delete items."</string>
+
+    <string name="HTinstructionItem1">Author: YanCheng, Version: </string>
+    <string name="HTinstructionItem2">. Instruction for use: the interface can be user to add, edit &amp; save, edit &amp; new, and delete items.</string>
+
     <string name="open_string">Open</string>
     <string name="close_string">Close</string>
     <string name="HTdeleteTitle">Do you want to delete?</string>
