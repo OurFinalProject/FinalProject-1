@@ -129,11 +129,14 @@
 
                     <Button
                         android:id="@+id/addButton_HouseThermostat"
-                        android:layout_width="0dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/button_add"
+                        android:text="@string/add_HouseThermostat"
                         android:layout_weight="2"
-                         />
+                        />
+                    <!-- android:layout_width="0dp"
+                                           android:background="@drawable/button_add"-->
+
 
 
                     <!--

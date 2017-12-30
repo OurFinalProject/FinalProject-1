@@ -60,6 +60,7 @@
 
 
     <string-array name="week_arrays">
+        <item></item>
         <item>Monday</item>
         <item>Tuesday</item>
         <item>Wednesday</item>

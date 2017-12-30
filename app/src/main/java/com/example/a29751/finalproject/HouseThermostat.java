@@ -60,64 +60,34 @@ public class HouseThermostat extends AppCompatActivity
     HouseThermostatMessageFragment houseThermostatMessageFragment;
     Boolean fb1;
     private ProgressBar pBar;
-    String responseText;
+    String responseText = "1.0";
     String addText = null;
-    String dayOfWeek = "Monday";
-    DrawerLayout drawer;
+    String dayOfWeek;
 
+//    String dayOfWeek = "Monday";
+    DrawerLayout drawer;
     private int mYear, mMonth, mDay, mHour, mMinute;
     private Spinner spinner1, spinner2;
-    //Toolbar toolbar;
-
-    // add items into spinner dynamically
-    /*
-    public void addItemsOnSpinner2() {
-
-        spinner2 = (Spinner) findViewById(R.id.spinner2);
-        List<String> list = new ArrayList<String>();
-        list.add("list 1");
-        list.add("list 2");
-        list.add("list 3");
-        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_spinner_item, list);
-        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner2.setAdapter(dataAdapter);
-    }
-*/
 
     public void addListenerOnSpinnerItemSelection() {
         spinner1 = (Spinner) findViewById(R.id.spinner1);
-        //spinner1.setOnItemSelectedListener(new CustomOnItemSelectedListener());
         spinner1.setOnItemSelectedListener(this);
     }
 
-
     public void onItemSelected(AdapterView<?> parent, View view, int pos,long id) {
-        /*
-        Toast.makeText(parent.getContext(),
-                "OnItemSelectedListener : " + parent.getItemAtPosition(pos).toString(),
-                Toast.LENGTH_SHORT).show();
-                */
         dayOfWeek = parent.getItemAtPosition(pos).toString();
     }
 
     @Override
     public void onNothingSelected(AdapterView<?> arg0) {
-        // TODO Auto-generated method stub
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_house_thermostat);
-        //------------------------------------
-        //addItemsOnSpinner2();
-
         addListenerOnSpinnerItemSelection();
-        //------------------------------------
-
-       // responseText = getString(R.string.HTselectItem);
-        responseText = "1.0";
+     //   responseText = "1.0";
         Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar);
         toolbar.setTitleTextColor(getResources().getColor(R.color.white));
         setSupportActionBar(toolbar);
@@ -255,7 +225,7 @@ public class HouseThermostat extends AppCompatActivity
                 if (newStringWeek.equals(""))
       //              addText += "Week can not be null! ";
                     addText += getString(R.string.HTWeekNull);
-                    if (newStringTime.equals(""))
+                    if (newStringTime.equals("Time"))
                     addText += getString(R.string.HTTimeNull);
                 if (newStringTemp.equals(""))
                     addText += getString(R.string.HTTempNull);
