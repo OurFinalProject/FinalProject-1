@@ -230,7 +230,6 @@ public class HouseThermostat extends AppCompatActivity
                                                                  eTextTime.setText(hourOfDay + ":" + minute);
                                                              }
                                                          }, mHour, mMinute, true);
-
                                                  timePickerDialog.show();
 
                                             }
