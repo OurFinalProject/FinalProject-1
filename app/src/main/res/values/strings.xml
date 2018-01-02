@@ -51,13 +51,11 @@
     <string name= "HTTempNull"> Temp can not be null!</string>
     <string name= "HTAddSucc">  Added successful!</string>
 
-
     <string name= "HTWeek"> Date</string>
 
     <string name="time_HouseThermostat">Time</string>
 
     <string name= "week_prompt">  Week </string>
-
 
     <string-array name="week_arrays">
         <item></item>
